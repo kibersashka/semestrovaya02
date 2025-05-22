@@ -30,5 +30,10 @@ public class Main {
         System.out.println(trie.search("apple"));
         System.out.println(trie.search("app"));
 
+        System.out.println(trie.startsWith("ap"));
+        System.out.println(trie.startsWith("sf"));
+
+        System.out.println(trie.delete(trie.getRoot(), "apple", 0));
+        System.out.println(trie.search("app"));
     }
 }
