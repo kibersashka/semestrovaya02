@@ -1,16 +1,14 @@
 package org.example;
 
-import java.util.List;
-
 public class Result {
     private int wordLength;
     private int wordCount;
     long summaryInsertTime;
     long summarySearchTime;
     long summaryDeleteTime;
-    private double averageInsertTimeMillis;
-    private double averageSearchTimeMillis;
-    private double averageDeleteTimeMillis;
+    private double averageInsertTime;
+    private double averageSearchTime;
+    private double averageDeleteTime;
 
     public Result() {
         this.wordLength = 0;
@@ -18,9 +16,9 @@ public class Result {
         this.summaryInsertTime = 0;
         this.summarySearchTime = 0;
         this.summaryDeleteTime = 0;
-        this.averageInsertTimeMillis = 0;
-        this.averageSearchTimeMillis = 0;
-        this.averageDeleteTimeMillis = 0;
+        this.averageInsertTime = 0;
+        this.averageSearchTime = 0;
+        this.averageDeleteTime = 0;
     }
 
     @Override
@@ -28,9 +26,9 @@ public class Result {
         return "Result{" +
                 "wordLength=" + wordLength +
                 ", wordCount=" + wordCount +
-                ", averageInsertTimeMillis=" + averageInsertTimeMillis +
-                ", averageSearchTimeMillis=" + averageSearchTimeMillis +
-                ", averageDeleteTimeMillis=" + averageDeleteTimeMillis +
+                ", averageInsertTimeMillis=" + averageInsertTime +
+                ", averageSearchTimeMillis=" + averageSearchTime +
+                ", averageDeleteTimeMillis=" + averageDeleteTime +
                 '}';
     }
 
@@ -74,27 +72,27 @@ public class Result {
         this.summaryDeleteTime = summaryDeleteTime;
     }
 
-    public double getAverageInsertTimeMillis() {
-        return averageInsertTimeMillis;
+    public double getAverageInsertTime() {
+        return averageInsertTime;
     }
 
-    public void setAverageInsertTimeMillis(double averageInsertTimeMillis) {
-        this.averageInsertTimeMillis = averageInsertTimeMillis;
+    public void setAverageInsertTime(double averageInsertTime) {
+        this.averageInsertTime = averageInsertTime;
     }
 
-    public double getAverageSearchTimeMillis() {
-        return averageSearchTimeMillis;
+    public double getAverageSearchTime() {
+        return averageSearchTime;
     }
 
-    public void setAverageSearchTimeMillis(double averageSearchTimeMillis) {
-        this.averageSearchTimeMillis = averageSearchTimeMillis;
+    public void setAverageSearchTime(double averageSearchTime) {
+        this.averageSearchTime = averageSearchTime;
     }
 
-    public double getAverageDeleteTimeMillis() {
-        return averageDeleteTimeMillis;
+    public double getAverageDeleteTime() {
+        return averageDeleteTime;
     }
 
-    public void setAverageDeleteTimeMillis(double averageDeleteTimeMillis) {
-        this.averageDeleteTimeMillis = averageDeleteTimeMillis;
+    public void setAverageDeleteTime(double averageDeleteTime) {
+        this.averageDeleteTime = averageDeleteTime;
     }
 }

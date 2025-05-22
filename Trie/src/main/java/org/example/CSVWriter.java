@@ -10,9 +10,9 @@ public class CSVWriter {
             for (Result result : results) {
                 writer.write(result.getWordLength() + ";" +
                         result.getWordCount() + ";" +
-                        result.getAverageInsertTimeMillis() + ";" +
-                        result.getAverageSearchTimeMillis() + ";" +
-                        result.getAverageDeleteTimeMillis() + "\n");
+                        result.getAverageInsertTime() + ";" +
+                        result.getAverageSearchTime() + ";" +
+                        result.getAverageDeleteTime() + "\n");
             }
 
             System.out.println("CSV файл успешно сохранён: " + filename);

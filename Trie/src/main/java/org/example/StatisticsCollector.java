@@ -44,9 +44,9 @@ public class StatisticsCollector {
                 long duration3 = endTime3 - startTime3;
                 result.summaryDeleteTime += duration3;
             }
-            result.setAverageInsertTimeMillis((double) result.summaryInsertTime / 5 / i);
-            result.setAverageSearchTimeMillis((double) result.summarySearchTime / 500);
-            result.setAverageDeleteTimeMillis((double) result.summaryDeleteTime / 5 / i);
+            result.setAverageInsertTime((double) result.summaryInsertTime / 5 / i);
+            result.setAverageSearchTime((double) result.summarySearchTime / 500);
+            result.setAverageDeleteTime((double) result.summaryDeleteTime / 5 / i);
             results.add(result);
         }
         CSVWriter.saveResultsToCSV("Trie/src/main/resources/trieStats.csv", results);
