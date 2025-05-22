@@ -11,7 +11,7 @@ public class StatisticsCollector {
             Result result = new Result();
             result.setWordLength(7);
             result.setWordCount(i);
-            List<String> words = TriesGenerator.generateWords(i, 7);
+            List<String> words = TriesGenerator.generateWords(i, result.getWordLength());
             for (int j = 0; j < 5; j++) {
                 Trie trie = new Trie();
                 long startTime1 = System.nanoTime();
