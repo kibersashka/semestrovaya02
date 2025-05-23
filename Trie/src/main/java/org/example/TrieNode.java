@@ -12,10 +12,20 @@ import java.util.Map;
 public class TrieNode {
     private Map<Character, TrieNode> children; //потомки
     private boolean terminal; //конец слова или нет
+    private int count;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public TrieNode() {
         children = new HashMap<>();
         terminal = false;
+        count = 0;
     }
 
     public Map<Character, TrieNode> getChildren() {

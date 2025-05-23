@@ -1,7 +1,11 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Trie implements TrieImpl {
     private TrieNode root;//корень дерева -> всегда пустой
+    private long counterPref;
 
     public Trie() {
         this.root = new TrieNode();
@@ -19,8 +23,10 @@ public class Trie implements TrieImpl {
         for (Character ch : str.toCharArray()) {
             if (!current.getChildren().containsKey(ch)) {
                 current.getChildren().put(ch, new TrieNode());
+
             }
             current = current.getChildren().get(ch);
+            current.setCount(current.getCount() + 1);
         }
         current.setTerminal(true);
     }
@@ -103,5 +109,23 @@ public class Trie implements TrieImpl {
 
     public TrieNode getRoot() {
         return root;
+    }
+    public void findRoot(TrieNode node, String currentPref, Map<String, Integer> res){
+        if(node.getCount() > 1 &&
+                (node.isTerminal() || node.getChildren().size() > 1)){//у узла есть потомки больше чем 1 -> сущетсвует больше 1 слова
+            //или слово либо терминал или несколько продолжений
+            res.put(currentPref, node.getCount());//корень и кол-во слов
+            return;//избегаем случая с одинковым продолжением но не корнем типо (лес и лесн )
+        }
+        for(Map.Entry<Character, TrieNode> entry : node.getChildren().entrySet()){
+            findRoot(entry.getValue(), currentPref + entry.getKey(), res);//идем по всем поттомкам
+        }
+
+    }
+
+    public Map<String, Integer> findRootInTheWord(){
+        Map<String, Integer> rootWords = new HashMap<>();
+        findRoot(root, "", rootWords);//собираем мап
+        return rootWords;
     }
 }
